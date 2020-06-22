@@ -1,0 +1,198 @@
+mixin SelectBox(name, options)
+  .select-box
+    .select-box__current(tabindex="1")
+      each option, index in options
+        .select-box__value
+          input.select-box__input(type="radio" id=index value=option.value name=name checked)
+          p.select-box__input-text #{option.name}
+      img.select-box__icon(src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true")
+    ul.select-box__list
+      each option, index in options
+        li
+          label.select-box__option(for=index aria-hidden) #{option.name}
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Pincet
+  body
+    div.screen-1
+      img(src="assets/girl.png").screen-1__girl
+      img(src="assets/wave.png").screen-1__wave
+      header.header.screen-1__header
+        nav.mobile-nav.mobile-nav_hidden(id="mobileNav")
+          div(id="mobileContainer")
+            ul
+                li
+                  a(href="#") Главная
+                li
+                  a(href="#") Шугаринг и депиляция воском
+                li
+                  a(href="#") Антицеллюлитный массаж
+                li
+                  a(href="#") Классический массаж
+                li
+                  a(href="#") Обучение
+                li
+                  a(href="#") Косметика для мастеров
+                li
+                  a(href="#") Статьи
+                li
+                  a(href="#") О студии
+                li
+                  a(href="#") Контакты
+        section.header__info
+          div.header__logo
+            object(type="image/svg+xml" data="assets/logo.svg")
+          div.header__descr
+            span Студия депиляции и 
+                  |массажный кабинет
+                  |в Бресте
+          div.h-map.header__map
+            div.h-map__icon
+              img(src="assets/map.png" alt="map.png")
+            div.h-map__info
+              p 
+                span Мы находимся в центре:
+              p г. Брест, ул. Гоголя, д.65
+              a(href="#" id="hMapBtn").h-map__link
+                span Смотреть на карте
+              
+              div(id="hMapCon").h-map__full-size
+                <iframe id="hMapIframe" width="500" height="390" frameborder="0"></iframe>
+          div.h-phone-time.header__contacts
+            div.h-phone-time__phone
+              object(type="image/svg+xml" data="assets/phone.svg")
+              div
+                span Звоните, мы сейчас работаем
+                P +375 33 382 24 99
+            div.h-phone-time__time
+              object(type="image/svg+xml" data="assets/time.svg")
+              p Пн-Вс 
+                span 9:00-21:00
+          div.header__sign-up
+            button(id="sign-up-button") 
+              object(type="image/svg+xml" data="assets/calendar.svg")
+              | Записаться онлайн
+          div(id="mobileBtn").header__mobile-btn
+            span
+            span
+            span
+        section.h-mobile-info
+          div.h-map.h-mobile-info__map
+            div.h-map__icon
+              img(src="assets/map.png" alt="map.png")
+            div.h-map__info
+              p 
+                span Мы находимся в центре:
+              p г. Брест, ул. Гоголя, д.65
+              a(href="#" id="hMapBtnMob").h-map__link
+                span Смотреть на карте
+              
+              div(id="hMapConMob").h-map__full-size
+                <iframe id="hMapIframeMob" width="500" height="390" frameborder="0"></iframe>
+          div.h-phone-time.h-mobile-info__contacts
+            div.h-phone-time__phone
+              object(type="image/svg+xml" data="assets/phone.svg")
+              div
+                span Звоните, мы сейчас работаем
+                P +375 33 382 24 99
+            div.h-phone-time__time
+              object(type="image/svg+xml" data="assets/time.svg")
+              p Пн-Вс 
+                span 9:00-21:00
+        nav.h-nav.header__nav
+          ul.h-nav__items
+            li.h-nav__item.h-nav__item_active
+              a(href="#") Главная
+            li.h-nav__item
+              a(href="#") Шугаринг и депиляция воском
+            li.h-nav__item
+              a(href="#") Антицеллюлитный массаж
+            li.h-nav__item
+              a(href="#") Классический массаж
+            li.h-nav__item
+              a(href="#") Обучение
+            li.h-nav__item
+              a(href="#") Косметика для мастеров
+            li.h-nav__item
+              a(href="#") Статьи
+            li.h-nav__item
+              a(href="#") О студии
+            li.h-nav__item
+              a(href="#") Контакты
+      article.content.screen-1__content
+        h1.content__title Хотите избавиться от
+          p  нежелательных волос 
+          |или нужен сеанс 
+          p антицеллюлитного массажа?
+        section.content__advantages
+          ul
+            li депиляция воском и Шугаринг;
+            li профессиональные сертифицированные мастера;
+            li работаем и с женщинами, и с мужчинами;
+            li результат уже после первой процедуры.
+        section.content__sign-up 
+          button(id="sign-up-button-2")
+            div
+              p ПОЛУЧИТЬ КАРТУ 
+              p КЛИЕНТА БЕСПЛАТНО
+            img(src="assets/branch.png")
+        section.content__client-card
+          img(src="assets/card.png")
+          div.info-btn
+            img(src="assets/circle.svg")
+            section.info-btn__content
+              p
+                |Lorem ipsum dolor sit amet,  
+                |consectetur adipisicing elit, sed do eiusmod tempor 
+                |incididunt ut labore et dolore magna
+              img(src="assets/info-box.svg")
+              img(src="assets/info-box.svg")
+      div.down-arrow
+        i
+        i
+        i
+        img(src="assets/circle-arrow.svg", alt="cirlce-arrow.svg").down-arrow__arrow
+        img(src="assets/stick-circle.svg" alt="stick-circle.svg").down-arrow__stick
+      div(id="cloud-1").paralax-cloud-1
+        img(src="assets/cloud-1.png" data-depth="0.8")
+      div(id="cloud-2").paralax-cloud-2
+        img(src="assets/cloud-2.png" data-depth="0.5")
+      div(id="cloud-3").paralax-cloud-3
+        img(src="assets/cloud-3.png" data-depth="0.9")
+      div(id="popup").popup.popup_hidden
+        div.popup__container
+          h2.popup__title
+            span Получите  
+            |программу  
+            |обучения 
+          p.popup__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
+            |tempor incididunt 
+            |ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            |ullamco laboris nisi ut 
+
+        
+
+          form.popup__form
+            +SelectBox('Ben', [
+                {name: 'Повышение квалификации', value: '1'}, 
+             
+              ])
+            input(type="text" placeholder="Ваше имя")
+            input(type="text" placeholder="Ваш номер телефона")
+            div.popup__btn
+              button(id="popup-submit")
+                p Получить программу
+                img(src="assets/popup__btn-img.png")
+          img(src="assets/close-btn.png" id="popup-close").popup__close-btn
+          img(src="assets/popup-book.png").popup__book
+      div.popup-success.popup-success_hidden(id='popup-success')
+        div.popup-success__container
+          img(src="assets/success.png").popup-success__checkbox
+          p 
+            span Ваш заказ принят.
+          p Ожидайте звонка
+          img(src="assets/lepestok.png").popup-success__lepestok
+          img(src="assets/close-btn.png" id="popup-success-close").popup-success__close-btn

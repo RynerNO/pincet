@@ -1,0 +1,984 @@
+@function vw($px-vw, $base-vw: 1920px)    
+  @return ($px-vw * 100vw) / $base-vw
+
+@font-face 
+ font-family: "MuseoSans"
+ src: url("/fonts/MUSEOSANSCYRL_0.otf") format("otf")
+ font-weight: 100
+ font-display: swap
+@font-face 
+ font-family: "MuseoSans"
+ src: url("/fonts/MUSEOSANSCYRL_1.otf") format("otf")
+ font-weight: 300
+ font-display: swap
+@font-face 
+ font-family: "MuseoSans"
+ src: url("/fonts/MUSEOSANSCYRL_2.otf") format("otf")
+ font-weight: 500
+ font-display: swap
+ @font-face 
+ font-family: "MuseoSans"
+ src: url("/fonts/MUSEOSANSCYRL_3.otf") format("otf")
+ font-weight: 700
+ font-display: swap
+@font-face 
+ font-family: "MuseoSans"
+ src: url("/fonts/MUSEOSANSCYRL.otf") format("otf")
+ font-weight: 900
+ font-display: swap
+div, header, section, main, footer, body, article, aside, h1, h2, h3, p, ul
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+@keyframes pulse 
+  0% 
+    box-shadow: 0 0 0 0 rgba(187, 95, 100, 0.582) 
+  70% 
+      box-shadow: 0 0 0 10px rgba(187, 95, 100, 0) 
+  100% 
+      box-shadow: 0 0 0 0 rgba(187, 95, 100, 0) 
+@keyframes go-down
+  0%
+    
+  50%
+    top: vw(60px)
+  100%
+    top: vw(53px)
+
+.screen-1
+  font-size: 16px
+  font-family: "MuseoSans"
+  background-image: url(assets/bg.jpg)
+  background-repeat: no-repeat
+  background-size: cover
+  height: 100vh
+  width: 100vw
+  position: relative
+  overflow: hidden
+  &__header
+    padding-top: vw(32px)
+  &__content
+    width: vw(686px)
+    margin-top: vw(95px)
+    z-index: 2
+    position: relative
+    left: vw(300px)
+  &__girl
+    width: vw(868px)
+    height: vw(760px)
+    position: absolute
+    bottom: 0
+    right: 0
+    z-index: 1
+  &__wave
+    width: 100vw
+    position: absolute
+    bottom: vw(-50px)
+    z-index: 2
+.header
+  position: relative
+  z-index: 6
+  &__info
+    width: vw(1529px)
+    height: vw(126px)
+    display: flex
+    align-items: center
+    margin: 0 auto
+  &__logo 
+    object
+      width: vw(280px)
+      height: vw(126px)
+  &__descr
+    width: vw(142px)
+    font-weight: 300
+    font-size: vw(14px)
+    margin-left: vw(60px)
+    margin-left: auto
+    margin-right: auto
+  &__map
+    margin-left: vw(160px)
+    margin-left: auto
+  &__mobile-btn
+    cursor: pointer
+    display: none
+    z-index: 16
+    span
+      width: 25px
+      height: 3px
+      background-color: #fa6fa4
+      margin: 6px 0
+      display: block
+
+  &__contacts
+    margin-left: vw(75px)
+    margin-left: auto
+  &__sign-up
+    margin-left: vw(75px)
+    margin-left: auto
+    button
+      width: vw(228px)
+      height: vw(62px)
+      border-radius: 9999px
+      background-color: #FEFCFB
+      cursor: pointer
+      outline: none
+      border: none
+      font-size: vw(15px)
+      font-weight: 500
+      display: flex
+      align-items: center
+      justify-content: center
+      box-shadow: #EBEAEA 0 vw(3px) 0 vw(2px)  
+      transition: box-shadow 0.1s linear
+      object
+        margin-right: vw(10px)
+        width: vw(20px)
+        height: vw(20px)
+      &:active
+        outline: none
+        box-shadow: none
+  &__nav
+    width: vw(1523px)
+    height: vw(60px)
+    margin: 0 auto
+    margin-top: vw(15px)
+    padding: 0 vw(18px)
+.h-map
+  display: flex
+  align-items: center
+  &__icon
+    width: vw(78px)
+    height: vw(78px)
+    overflow: hidden
+    position: relative
+    border-radius: 9999px
+    
+    img
+      display: block
+      width: 100%
+  &__link
+    
+    margin-top: vw(16px)
+    display: block
+    text-decoration: none
+    span
+      color: #FF6078
+      text-transform: uppercase
+      padding-bottom: vw(2px)
+      font-size: vw(12px)
+      font-weight: 500
+      border-bottom: vw(1px) dashed #FF6078
+  &__full-size
+    position: absolute
+    top: vw(149px)
+    display: none
+    &_visible
+      display: block
+    iframe
+      width: 26vw
+      height: 25vw
+  &__info
+    margin-left: vw(23px)
+    p
+      font-weight: 300
+      font-size: vw(16px)
+      span
+        font-weight: 700
+.h-phone-time
+  display: flex
+  flex-direction: column
+  &__phone, &__time 
+    object
+      margin-right: vw(11px)
+      width: vw(35px)
+      height: vw(35px)
+  &__phone
+    display: flex
+    align-items: center
+    span
+      font-weight: 500
+      font-size: vw(12px)
+      display: flex
+      align-items: center
+      &:before 
+        content: ''
+        width: vw(6px)
+        height: vw(6px)
+        background-color: #27B24B
+        display: block
+        border-radius: 9999px
+        margin-right: vw(11px)
+
+    p
+      font-weight: 500
+      font-size: vw(24px)
+      
+  &__time
+    display: flex
+    align-items: center
+    p
+      font-size: vw(16px)
+      font-weight: 300
+      span
+        font-size: vw(16px)
+        font-weight: 700
+.h-mobile-info
+  display: none
+
+.h-nav
+  display: flex
+  align-items: center
+  background-color: #FFFFFF
+  border-radius: vw(12px)
+  box-shadow: #F3F3F3 vw(5px) vw(20px) vw(4px) vw(-11px)
+
+
+
+  &__items
+    display: flex
+    width: 100%
+    list-style: none
+    margin-left: vw(15px)
+    justify-content: space-between
+  &__item
+    a
+      text-decoration: none
+      color: #282828
+      font-size: vw(15px)
+    &_active
+      a
+        font-weight: 700 
+        
+.mobile-nav
+  position: absolute
+  left: 0
+  top: 0
+  z-index: 15
+  #mobileContainer
+    width: 100vw
+    height: 100vh
+    z-index: 10
+    background-color: rgba(42, 41, 41, 0.671)
+    display: flex
+    justify-content: center
+    align-items: center
+  ul
+    display: flex
+    flex-direction: column
+    li
+      list-style: none
+      text-align: center
+      padding: 0.5vh 0
+      a
+        text-decoration: none
+        color: #fff  
+.mobile-nav_hidden
+  display: none
+.content
+  position: relative
+  &__title
+    font-size: vw(48px)
+    font-weight: 300
+    line-height: 1
+    p
+      font-weight: 700
+  &__advantages
+    ul
+      list-style: none
+      margin-top: vw(50px)
+      li
+        display: flex
+        align-items: center
+        font-size: vw(18px)
+        font-weight: 300
+        margin-bottom: vw(20px)
+        &:before
+          content: ''
+          width: vw(7px)
+          height: vw(7px)
+          border: vw(4px) solid #F7F7FB
+          box-shadow: #ef94987a 0 0 vw(12px) vw(1px)
+          margin-right: vw(13px)
+          display: block
+          background-color: #EF9499
+          border-radius: vw(9999px)
+  &__sign-up
+    margin-top: vw(62px)
+    button
+      width: vw(379px)
+      height: vw(85px)
+      border-radius: vw(9999px)
+      border: none
+      outline: none
+      display: flex
+      justify-content: center
+      cursor: pointer
+      position: relative
+      flex-direction: column
+      background-image: linear-gradient(#f5a5a7, #d7747a) 
+      box-shadow: #d7747a vw(-1px) vw(4px) vw(0px) vw(0px)
+      transition: box-shadow 0.1s linear
+      p
+        font-size: vw(14px)
+        color: #fff
+        margin-left: vw(40px)
+        font-weight: 700
+        line-height: 1.5
+      img
+        position: absolute
+        left: vw(210px)
+        height: vw(75px)
+      &:active
+        outline: none
+        box-shadow: none
+  &__client-card
+    position: absolute
+    top: vw(231px)
+    left: vw(282px)
+    pointer-events: none
+    width: vw(853px)
+    height: vw(521px) 
+    img
+      width: 100%
+.info-btn
+    position: absolute
+    z-index: 5
+    top: vw(181px)
+    left: vw(323px)
+    pointer-events: all
+    &>img
+      cursor: pointer
+      width: vw(41px)
+      height: vw(41px)
+      animation: pulse 1.5s infinite
+      border-radius: 9999px
+   
+    &__content
+      width: vw(175px)
+      height: vw(209px)
+      position: absolute
+      top: vw(-188px)
+      opacity: 0
+      left: vw(21px)
+      z-index: -1
+      display: flex
+      justify-content: center
+      align-items: center
+      transition: opacity 0.2s linear
+      pointer-events: none
+      p
+        width: vw(122px)
+        font-size: vw(14px)
+        text-align: center
+        letter-spacing: vw(1.68px)
+        color: #282828
+      img
+        width: 100%
+        height: 100%
+        position: absolute
+        z-index: -1
+      & img:nth-child(2)
+        left: 0
+        top: 0
+      & img:nth-child(3) 
+        opacity: 0.3
+        left: vw(15px)
+        bottom: vw(15px)
+    &:hover
+      &>img
+        animation: none
+      .info-btn__content
+        opacity: 1
+        pointer-events: all
+.down-arrow
+  position: absolute
+  left: calc(50vw - #{vw(133px / 2)})
+  bottom: vw(147px)
+
+  i
+    display: block
+    position: absolute
+    width: vw(133px)
+    border-radius: vw(9999px)
+    border: vw(1px) solid #fff
+  & i:nth-child(1)
+    width: vw(69px)
+    height: vw(70px)
+    left: vw(30px)
+    top: vw(28px)
+
+
+  & i:nth-child(2)
+    width: vw(101px)
+    height: vw(101px)
+    left: vw(16px)
+    top: vw(14px)
+  & i:nth-child(3)
+    width: vw(131px)
+    height: vw(131px)
+    left:0
+  &__arrow
+    position: absolute
+    left: vw(46px)
+    width: vw(38px)
+    height: vw(38px)
+    top: vw(53px)
+    z-index: 5
+    animation: go-down 1.5s infinite ease-in
+  &__stick
+    position: absolute
+    left: 0
+    width: vw(18px)
+    height: vw(36px)
+    bottom: 0
+    left: vw(56px)
+    top: vw(90px)
+    z-index: 5
+
+
+.paralax-cloud-1
+  position: absolute
+  top: vw(243px)
+  left: vw(127px)
+.paralax-cloud-2
+  position: absolute
+  top: vw(82px)
+  right: vw(-103px)
+.paralax-cloud-3
+  position: absolute
+  bottom: vw(217px)
+  left: 45vw
+ 
+
+.select-box 
+  position: relative
+  display: block
+  width: 100%
+  margin: 0 auto
+  font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif
+  font-size: 18px
+  color: #60666d
+
+  &__current 
+    position: relative
+    box-shadow: 0 15px 30px -10px transparentize(#000, 0.9)
+    cursor: pointer
+    outline: none
+    
+    &:focus 
+      & + .select-box__list 
+        opacity: 1
+
+        animation-name: none
+        
+        .select-box__option 
+          cursor: pointer
+        
+      
+      
+      .select-box__icon 
+        transform: translateY(-50%) rotate(180deg)
+      
+  
+  
+  
+  &__icon 
+    position: absolute
+    top: 50%
+    right: 15px
+    transform: translateY(-50%)
+    width: 20px
+    opacity: 0.3
+    transition: 0.2s ease
+  
+  
+  &__value 
+    display: flex
+  
+  
+  &__input 
+    display: none
+    
+    &:checked + .select-box__input-text 
+      display: block
+    
+  
+  
+  &__input-text 
+    display: none
+    width: 100%
+    margin: 0
+    padding: 15px
+    background-color: #fff
+  
+  
+  &__list 
+    position: absolute
+    width: 100%
+    padding: 0
+    list-style: none
+    opacity: 0
+
+    
+    animation-name: HideList
+    animation-duration: 0.5s
+    animation-delay: 0.5s
+    animation-fill-mode: forwards
+    animation-timing-function: step-start
+    box-shadow: 0 15px 30px -10px transparentize(#000, 0.9)
+  
+  
+  &__option 
+    display: block
+    padding: 15px
+    background-color: #fff
+    
+    &:hover,
+    &:focus 
+      color: #546c84
+      background-color: #fbfbfb
+    
+
+
+@keyframes HideList 
+  from 
+    transform: scaleY(1)
+  
+  to 
+    transform: scaleY(0)
+  
+
+.popup
+  width: 100vw
+  height: 100vh
+  position: absolute
+  left:0
+  top:0
+  z-index: 20
+  justify-content: center
+  align-items: center
+  display: flex
+  &__container
+    display: flex
+    border-radius: 25px
+    flex-direction: column
+    align-items: center
+    max-width: 738px
+    background-color: #fdf3ef
+    position: relative
+    margin: 0 35px
+    padding: 0 35px
+    width: 90%
+  &__title
+    color: #282828
+    font-size: 36px
+    font-weight: 300
+    padding: 15px 10px
+    span
+      font-weight: 700
+  &__text
+    letter-spacing: 0.4px
+    padding: 15px 10px
+  &__form
+    display: flex
+    width: 100%
+    flex-direction: column
+    z-index: 3
+    .select-box
+      max-width: 500px
+      width: 100%
+      &__input-text
+        border-radius: 40px
+        
+        color: #989797
+        height: 81px
+        padding: 29px
+        padding-left: 34px
+      &__option
+        border-radius: 40px
+    input, option
+      max-width: 500px
+      width: 100%
+      margin: 5px auto
+      height: 81px
+      padding: 0 30px
+      color: #989797
+      border-radius: 40px
+      border: 1px solid #fbeeef
+      background-color: #ffffff
+      box-sizing: border-box
+      outline: none
+  &__close-btn
+    position: absolute
+    top: 16px
+    right: 32px
+    cursor: pointer
+  &__btn
+    display: flex
+    justify-content: center
+    padding: 35px 0
+    button
+      width: 481px
+      height: 85px
+      border-radius: 9999px
+      border: none
+      outline: none
+      display: flex
+      justify-content: center
+      cursor: pointer
+      position: relative
+      flex-direction: column
+      background-image: linear-gradient(#f5a5a7, #d7747a) 
+      box-shadow: #d7747a vw(-1px) vw(4px) vw(0px) vw(0px)
+      transition: box-shadow 0.1s linear
+      p
+        font-size: 18px
+        text-transform: uppercase
+        color: #fff
+        margin-left: 40px
+        font-weight: 700
+        line-height: 1.5
+        letter-spacing: 2.16px
+      img
+        position: absolute
+        left: 324px
+        height: 75px
+      &:active
+        outline: none
+        box-shadow: none
+  &__book
+    z-index: 1
+    position: absolute
+    left: -91px
+    bottom: 31px
+.popup_hidden
+  display: none
+.popup-success
+  width: 100vw
+  height: 100vh
+  position: absolute
+
+  top:0
+  left:0
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 33
+  &__container
+    max-width: 524px
+    width: 90%
+    background-color:#fdf7f5
+    position: relative
+    display: flex
+    flex-direction: column
+    border-radius: 25px
+    padding: 25px 0
+    padding-bottom: 55px
+    align-items: center
+    p
+      color: #282828
+      font-size: 30px
+      letter-spacing: 0.75px
+      span
+        font-weight: 700
+  &__close-btn
+    position: absolute
+    right: 25px
+    top: 25px
+    cursor: pointer
+  &__lepestok
+    position: absolute
+    right: 0
+    bottom: 5px
+.popup-success_hidden
+  display: none
+@media(max-width: 1555px)
+  .header  
+    &__descr
+      font-size: 0.85vw
+  .h-nav
+    &__item 
+      a 
+        font-size: 0.89125vw
+  .h-phone-time
+    &__phone
+       span 
+          font-size: 0.85vw
+  .content
+    &__advantages 
+      ul 
+        li
+          font-size: 0.93vw
+    &__sign-up button 
+      p 
+        font-size: 0.7591666667vw
+
+@media(max-width: 1455px)
+  .header
+    &__info
+      width: 90vw
+    &__nav
+      width: 90vw  
+    &__descr
+      font-size: 0.95vw
+      width: 8.3vw
+  .h-nav
+    &__item 
+      a 
+        font-size: 0.99125vw
+  .h-phone-time
+    &__phone
+       span 
+          font-size: 0.95vw
+  .content
+    &__advantages 
+      ul 
+        li
+          font-size: 1.03vw
+    &__sign-up button 
+      p 
+        font-size: 0.8591666667vw
+  .h-map
+    &__info
+      p
+        font-size: 0.96vw
+    &__link
+      span
+        font-size: 0.75vw
+
+@media(max-width: 1255px)
+  .header
+    &__info
+      width: 90vw
+    &__nav
+      width: 90vw  
+    &__descr
+      font-size: 1.15vw
+      width: 8.3vw
+    &__sign-up
+      button
+        width: 13.875vw
+        font-size: 1.08125vw
+       
+  .h-nav
+    &__item 
+      a 
+        font-size: 1.099125vw
+  .h-phone-time
+    &__phone
+       span 
+          font-size: 1.095vw
+    &__time
+      p
+        font-size: 1.095vw
+  .content
+    &__advantages 
+      ul 
+        li
+          font-size: 1.13vw
+    &__sign-up button 
+      p 
+        font-size: 0.9591666667vw
+      img      
+        left: 13.9375vw
+    &__client-card
+      left: 17.6875vw
+  .info-btn
+    right: -0.96875vw
+  .h-map
+    &__info
+      p
+        font-size: 1.096vw
+    &__link
+      span
+        font-size: 0.85vw
+
+@media(max-width: 1000px)
+  @keyframes go-down
+    0%
+      
+    50%
+      top: 30px
+    100%
+      top: 27px
+  .header
+    &__info
+      width: 97vw
+    &__logo
+      object
+        width: 148px
+        height: 67px
+    &__nav
+      width: 97vw  
+      display: none
+    &__descr
+      font-size: 12px
+      width: 100px
+    &__sign-up
+      display: none
+      button
+        width: 16.875vw
+        font-size: 12px
+    &__mobile-btn  
+      display: block 
+      margin-left: auto
+  .h-nav
+    &__item 
+      a 
+        font-size: 13px
+  .h-phone-time
+    &__phone
+        object
+          width: 25px
+          height: 25px
+        span 
+          font-size: 12px
+          &:before
+            width: 4px
+            height: 4px
+        p
+          font-size: 14px
+    &__time
+      object
+          width: 25px
+          height: 25px
+      p
+        font-size: 12px
+        span
+          font-size: 11px
+  .screen-1
+    &__content
+      width: 320px
+    &__wave
+      width: 998px
+      bottom: -25px
+      left: calc(50vw - 499px)
+    &__girl
+      width: 450px
+      height: 395px
+  .content
+    &__advantages 
+      ul 
+        li
+          font-size: 13px
+          &:before
+            width: 4px
+            height: 4px 
+            border-width: 2px
+    &__title
+      font-size: 24px
+    &__sign-up 
+      button 
+        width: 203px
+        height: 45px
+        p 
+          font-size: 11px
+      
+        img      
+          left: 154px
+          min-width: 125px
+          min-height: 33px
+    &__client-card
+      left: 246px
+      top: 147px
+      width: 430px
+      height: 262px
+  .info-btn
+    right: -8px
+    bottom: 57px
+    top: 91px
+    left: 162px
+    &>img
+      width: 20px
+      height: 20px
+    &__content
+      width: 132px
+      height: 158px
+      top: -144px
+      p
+        width: 120px
+        font-size: 12px
+  .h-map
+    &__info
+      p
+        font-size: 12px
+    &__icon
+      width: 35px
+      height: 35px
+    &__link
+      span
+        font-size: 11px
+    &__full-size
+      top: 85px
+  .down-arrow
+    bottom: 76px
+    left: calc(50vw - 34px)
+    i:nth-child(1)
+      width: 36px
+      height: 36px
+      left: 16px 
+      top: 14.5px
+    i:nth-child(2)
+      width: 52px
+      height: 52px
+      left: 8px  
+      top: 7.2px
+    i:nth-child(3)
+      width: 68px
+      height: 68px 
+    &__arrow
+      width: 19.75px
+      height: 19.75px
+      left: 23px
+      top: 27px
+    &__stick
+      width: 9px
+      height: 18px
+      left: 29px
+      top: 46px
+
+@media(max-width: 743px)
+  .screen-1
+    &__header
+      padding-top: 25px
+      
+  .header
+    &__logo
+      align-self: center
+    &__info
+      justify-content: center
+    &__descr
+      display: none
+    &__map
+      display: none
+    &__contacts
+      display: none
+    &__mobile-btn
+      margin-left: 0
+      position: absolute
+      left: 25px
+  .h-map
+    &__full-size
+      top: 171px
+      iframe
+        width: 170px
+        height: 170px
+  .content
+    &__client-card
+      display: none
+  .h-mobile-info
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    padding: 20px 0
+    &__contacts, &__map
+      padding: 20px 15px
+  .popup
+    &__btn
+      button
+        img
+          display: none
+  .popup-success
+    &__lepestok
+      display: none
