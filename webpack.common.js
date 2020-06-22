@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   output: {
-    publicPath: "/",
+    
     filename: 'bundle.js'
   },
   entry: ['./src/index.js'],
